@@ -1,0 +1,8 @@
+.add-book-form{
+    background-color: var(--form-background);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    height: 300px;
+    width: 700px;
+    grid-area: form;
+}

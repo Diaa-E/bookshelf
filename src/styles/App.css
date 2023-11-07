@@ -1,0 +1,10 @@
+body{
+  background-color: var(--background);
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+  "form"
+  "shelf";
+  justify-content: center;
+  padding: 30px;
+}
