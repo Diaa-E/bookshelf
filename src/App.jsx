@@ -6,13 +6,13 @@ import "./styles/reset.css";
 import "./styles/colors.css";
 import './styles/App.css';
 
-import AddBookForm from './components/AddBookForm'
+import Form from './components/Form'
 
 function App() {
 
   return (
     <>
-      <AddBookForm/>
+      <Form/>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "../styles/AddBookButton.css";
+import "../styles/FormButton.css";
 
-export default function AddBookFormButton({text="click here", className, clickHandler = () => {}, type="button"})
+export default function FormButton({text="click here", className, clickHandler = () => {}, type="button"})
 {
     return (
         <>

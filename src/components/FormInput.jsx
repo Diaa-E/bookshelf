@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "../styles/AddBookInput.css";
+import "../styles/FormInput.css";
 
-export default function AddBookInput({id})
+export default function FormInput({id})
 {
     return (
         <>
