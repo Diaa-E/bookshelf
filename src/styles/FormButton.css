@@ -1,9 +1,17 @@
 .form-button{
+    will-change: transform, filter;
+    font-size: 16px;
     border: 2px solid var(--card-border);
     border-radius: 40px;
     cursor: pointer;
     grid-column: 1 / -1;
     padding: 10px;
+}
+
+.form-button:hover{
+    filter: brightness(120%);
+    transform: scale(1.01);
+    transition: .3s ease-in-out;
 }
 
 .green-button{
