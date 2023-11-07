@@ -1,0 +1,14 @@
+.form-input{
+    font-size: 16px;
+    border: 2px solid var(--card-border);
+    border-radius: 40px;
+    color: var(--text-dark);
+    padding: 10px;
+}
+
+.form-label{
+    font-size: 16px;
+    color: var(--text-dark);
+    padding: 10px;
+    text-align: left;
+}
