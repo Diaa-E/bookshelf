@@ -1,3 +1,11 @@
 .book{
-    
+    font-family: var(--main-font);
+    display: flex;
+    place-items: center;
+    padding: 5%;
+}
+
+.book>p{
+    transform: rotate(90deg);
+    font-size: 80%;
 }

@@ -1,11 +1,11 @@
 import { useState } from "react";
+import "../styles/Book.css";
 
-export default function Book({title, author, color })
+export default function Book({title, author, style })
 {
     return (
-        <div className="book">
-            <p>{title}</p>
-            <p>{author}</p>
+        <div style={style} className="book">
+            <p>{title} {author} </p>
         </div>
     )
 }

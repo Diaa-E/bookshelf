@@ -1,5 +1,5 @@
 .add-book-form{
-    font-family: "Roboto", sans-serif;
+    font-family: var(--main-font);
     background-color: var(--form-background);
     border: 2px solid var(--card-border);
     border-radius: 20px;

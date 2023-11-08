@@ -1,10 +1,5 @@
-@font-face {
-  font-family: "Roboto";
-  src: url(../assets/fonts/Roboto-Regular.ttf);
-  font-weight: normal;
-}
-
 body{
+  min-width: 100vw;
   background-color: var(--background);
   display: grid;
   grid-template-rows: repeat(2, min-content);

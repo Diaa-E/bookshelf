@@ -1,3 +1,10 @@
 .shelf{
+    background-color: var(--shelf);
+    border: 10px solid var(--shelf-edge);
+    padding: 20px 20px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+    align-items: flex-end;
+    row-gap: 10px;
     
 }

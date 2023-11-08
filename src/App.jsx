@@ -3,12 +3,14 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 
 import "./styles/reset.css";
+import "./styles/fonts.css";
 import "./styles/colors.css";
 import './styles/App.css';
 
 import Form from './components/Form'
 import Shelf from './components/Shelf';
 import Book from './components/Book';
+import { generateRandomNumber } from './utility';
 
 function App() {
 
@@ -24,6 +26,12 @@ function App() {
           key={count}
           title={bookTitle}
           author={bookAuthor}
+          style={{
+            height: `${generateRandomNumber(200, 150)}px`,
+            width: `${generateRandomNumber(25, 40)}px`,
+            backgroundColor: `rgb(${generateRandomNumber(0, 256)}, ${generateRandomNumber(0, 256)}, ${generateRandomNumber(0, 256)})`,
+            transform: `rotate(${generateRandomNumber(-20, 0)}deg)`
+          }}
         />
     )
 
