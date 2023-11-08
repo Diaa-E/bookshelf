@@ -5,7 +5,10 @@ export default function Book({title, author, style })
 {
     return (
         <div style={style} className="book">
-            <p>{title} {author} </p>
+            <div className="book-info">
+                <p>Title: {title}</p>
+                <p>Author: {author}</p>
+            </div>
         </div>
     )
 }

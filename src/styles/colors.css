@@ -8,4 +8,5 @@
     --red: rgb(251, 89, 89);
     --blue: rgb(110, 190, 255);
     --text-dark: black;
+    --overlay: rgba(0, 0, 0, 0.3);
 }

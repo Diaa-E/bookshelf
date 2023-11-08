@@ -1,11 +1,21 @@
 .book{
+    will-change: transform;
     font-family: var(--main-font);
-    display: flex;
-    place-items: center;
-    padding: 5%;
+    cursor: pointer;
 }
 
-.book>p{
-    transform: rotate(90deg);
-    font-size: 80%;
+.book-info{
+    will-change: opacity;
+    background-color: var(--background);
+    border: 2px solid var(--card-border);
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+    opacity: 0;
+    margin: -100px 0 0 0;
+    pointer-events: none;
+}
+
+.book:hover .book-info{
+    opacity: 1;
 }
