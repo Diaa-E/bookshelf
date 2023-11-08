@@ -1,10 +1,11 @@
 .shelf{
-    background-color: var(--shelf);
+    background-image: url("../assets/shelf_background.jpg");
+    background-size: 230px auto;
     border: 10px solid var(--shelf-edge);
-    padding: 20px 20px 0 20px;
+    padding: 0 20px 0 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 50px);
     align-items: flex-end;
     row-gap: 10px;
-    
+    grid-auto-rows: 220px;
 }
