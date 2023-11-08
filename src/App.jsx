@@ -23,6 +23,7 @@ function App() {
 
     const newBook = (
         <Book 
+          id={count}
           key={count}
           title={bookTitle}
           author={bookAuthor}
