@@ -36,6 +36,13 @@ function App() {
     setCount(count + 1);
   }
 
+  function deleteBook(bookId)
+  {
+    const updatedBooks = books.filter(book => book.id !== bookId)
+
+    setBooks(updatedBooks);
+  }
+
   return (
     <>
       <Form submitHandler={addBook}/>
@@ -46,6 +53,7 @@ function App() {
           key={book.id}
           author={book.author}
           style={book.style}
+          deleteHandler={deleteBook}
         />
       ))}/>
     </>

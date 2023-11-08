@@ -19,3 +19,13 @@
 .book:hover .book-info{
     opacity: 1;
 }
+
+.book:hover .delete-button{
+    opacity: 1;
+}
+
+.delete-button{
+    will-change: opacity;
+    cursor: pointer;
+    opacity: 0;
+}
