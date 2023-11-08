@@ -17,33 +17,37 @@ function App() {
   const [books, setBooks] = useState([]);
   const [count, setCount] = useState(0);
 
-  function createNewBook(e, bookTitle, bookAuthor)
+  function addBook(e, bookTitle, bookAuthor)
   {
     e.preventDefault();
 
-    const newBook = (
-        <Book 
-          id={count}
-          key={count}
-          title={bookTitle}
-          author={bookAuthor}
-          style={{
-            height: `${generateRandomNumber(200, 150)}px`,
-            width: `${generateRandomNumber(25, 40)}px`,
-            backgroundColor: `rgb(${generateRandomNumber(0, 256)}, ${generateRandomNumber(0, 256)}, ${generateRandomNumber(0, 256)})`,
-            transform: `rotate(${generateRandomNumber(-20, 0)}deg)`
-          }}
-        />
-    )
+    setBooks([...books, {
+      id: count,
+      title: bookTitle,
+      author: bookAuthor,
+      style:{
+        height: `${generateRandomNumber(200, 150)}px`,
+        width: `${generateRandomNumber(25, 40)}px`,
+        backgroundColor: `rgb(${generateRandomNumber(0, 256)}, ${generateRandomNumber(0, 256)}, ${generateRandomNumber(0, 256)})`,
+        transform: `rotate(${generateRandomNumber(-20, 0)}deg)`,
+      }
+    }]);
 
-    setBooks([...books, newBook]);
     setCount(count + 1);
   }
 
   return (
     <>
-      <Form submitHandler={createNewBook}/>
-      <Shelf books={books}/>
+      <Form submitHandler={addBook}/>
+      <Shelf books={books.map(book => (
+        <Book
+          id={book.id}
+          title={book.title}
+          key={book.id}
+          author={book.author}
+          style={book.style}
+        />
+      ))}/>
     </>
   )
 }
