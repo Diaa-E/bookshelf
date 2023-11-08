@@ -1,6 +1,4 @@
 #root{
-  min-width: 100vw;
-  background-color: var(--background);
   display: grid;
   grid-template-rows: repeat(2, min-content);
   grid-template-areas:
@@ -9,4 +7,8 @@
   justify-content: center;
   padding: 30px;
   gap: 30px;
+}
+
+body{
+  background-color: var(--background);
 }
