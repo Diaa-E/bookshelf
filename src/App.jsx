@@ -15,20 +15,17 @@ function App() {
   const [books, setBooks] = useState([]);
   const [count, setCount] = useState(0);
 
-  function createNewBook(e)
+  function createNewBook(e, bookTitle, bookAuthor)
   {
     e.preventDefault();
 
     const newBook = (
         <Book 
           key={count}
-          title={e.target.elements.bookTitle.value}
-          author={e.target.elements.bookAuthor.value}
+          title={bookTitle}
+          author={bookAuthor}
         />
     )
-
-    e.target.elements.bookTitle.value = "";
-    e.target.elements.bookAuthor.value = "";
 
     setBooks([...books, newBook]);
     setCount(count + 1);
