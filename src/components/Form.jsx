@@ -21,7 +21,7 @@ export default function Form()
                     placeHolder="J. K. Rawling"
                 />
                 <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
-                <FormButton className={"form-button red-button"} text="Clear"/>
+                <FormButton className={"form-button red-button"} text="Clear Fields"/>
             </form>
         </>
     )
