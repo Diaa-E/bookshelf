@@ -1,4 +1,4 @@
-body{
+#root{
   min-width: 100vw;
   background-color: var(--background);
   display: grid;
@@ -8,4 +8,5 @@ body{
   "shelf";
   justify-content: center;
   padding: 30px;
+  gap: 30px;
 }
