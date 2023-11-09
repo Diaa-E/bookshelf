@@ -25,7 +25,14 @@
 }
 
 .delete-button{
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../assets/delete.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
     will-change: opacity;
     cursor: pointer;
     opacity: 0;
+    width: 80px;
+    height: 50px;
+    margin: -70px 0 0 0 ;
 }

@@ -10,7 +10,7 @@ export default function Book({title, author, style, id, deleteHandler})
                 <p>Author: {author}</p>
                 <p>ID: {id}</p>
             </div>
-            <button onClick={() => deleteHandler(id)} className="delete-button">Delete</button>
+            <button onClick={() => deleteHandler(id)} className="delete-button"></button>
         </div>
     )
 }
