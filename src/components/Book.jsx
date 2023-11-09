@@ -3,8 +3,8 @@ import "../styles/Book.css";
 
 export default function Book({title, author, style, id, deleteHandler, pages})
 {
-    pages === "" || +pages === 0? pages = "N/A" : pages;
-    
+    pages === "" || +pages <= 0? pages = "N/A" : pages;
+
     return (
         <div style={style} className="book">
             <div className="book-info">
