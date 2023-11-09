@@ -12,3 +12,8 @@
     gap: 20px;
     padding: 20px;
 }
+
+.add-book-form>legend{
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -26,30 +26,33 @@ export default function Form({submitHandler})
 
     return (
         <>
-            <form action="" className="add-book-form" onSubmit={(e) => {
+            <form action="" onSubmit={(e) => {
                     submitHandler(e, bookTitle, bookAuthor);
                     resetForm();
                 }}>
-                <FormInput 
-                    id="book-title" 
-                    required={true}
-                    text="Book Title"
-                    placeHolder="Harry Potter and the Philosopher's Stone"
-                    name="bookTitle"
-                    changeHandler={handleTitleChange}
-                    value={bookTitle}
-                />
-                <FormInput
-                    id="book-author"
-                    required={true}
-                    text="Author"
-                    placeHolder="J. K. Rawling"
-                    name="bookAuthor"
-                    changeHandler={handleAuthorChange}
-                    value={bookAuthor}
-                />
-                <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
-                <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>
+                <fieldset  className="add-book-form">
+                    <legend>Add a new book</legend>
+                    <FormInput
+                        id="book-title"
+                        required={true}
+                        text="Book Title"
+                        placeHolder="Harry Potter and the Philosopher's Stone"
+                        name="bookTitle"
+                        changeHandler={handleTitleChange}
+                        value={bookTitle}
+                    />
+                    <FormInput
+                        id="book-author"
+                        required={true}
+                        text="Author"
+                        placeHolder="J. K. Rawling"
+                        name="bookAuthor"
+                        changeHandler={handleAuthorChange}
+                        value={bookAuthor}
+                    />
+                    <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
+                    <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>
+                </fieldset>
             </form>
         </>
     )
