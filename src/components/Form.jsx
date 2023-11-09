@@ -28,6 +28,7 @@ export default function Form({submitHandler})
     {
         setBookAuthor("");
         setBookTitle("");
+        setPages("");
     }
 
     return (
