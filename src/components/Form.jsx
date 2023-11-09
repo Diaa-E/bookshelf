@@ -7,6 +7,7 @@ export default function Form({submitHandler})
 {
     const [bookTitle, setBookTitle] = useState("");
     const [bookAuthor, setBookAuthor] = useState("");
+    const [pages, setPages] = useState("");
 
     function handleTitleChange(e)
     {
@@ -18,6 +19,11 @@ export default function Form({submitHandler})
         setBookAuthor(e.target.value);
     }
 
+    function handlePagesChange(e)
+    {
+        setPages(e.target.value);
+    }
+
     function resetForm()
     {
         setBookAuthor("");
@@ -27,7 +33,7 @@ export default function Form({submitHandler})
     return (
         <>
             <form action="" onSubmit={(e) => {
-                    submitHandler(e, bookTitle, bookAuthor);
+                    submitHandler(e, bookTitle, bookAuthor, pages);
                     resetForm();
                 }}>
                 <fieldset  className="add-book-form">
@@ -49,6 +55,16 @@ export default function Form({submitHandler})
                         name="bookAuthor"
                         changeHandler={handleAuthorChange}
                         value={bookAuthor}
+                    />
+                    <FormInput
+                        id="pages"
+                        required={false}
+                        text="Number of Pages"
+                        placeHolder="500"
+                        name="pages"
+                        changeHandler={handlePagesChange}
+                        value={pages}
+                        type="number"
                     />
                     <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
                     <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>
