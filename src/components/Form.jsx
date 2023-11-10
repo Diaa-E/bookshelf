@@ -99,6 +99,7 @@ export default function Form({submitHandler})
                         disabled={colorInputDisabled}
                         changeHandler={handleColorChange}
                         value={color}
+                        text="Pick a book color..."
                     />
                     <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
                     <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>

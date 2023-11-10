@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/FormColorInput.css";
 
-export default function FormColorInput({id, name, changeHandler, disabled = false, value})
+export default function FormColorInput({id, name, changeHandler, disabled = false, value, text = "Pick a color..."})
 {
     //The following code is stolen from stack overflow, it calculates the current color's brightness
     const fontColor = value.substring(1);
@@ -17,11 +17,11 @@ export default function FormColorInput({id, name, changeHandler, disabled = fals
         backgroundColor: value,
         color: luma > 100 ? "black" : "white",
     }
-    
+
     return (
         <>
             <label style={labelStyle} htmlFor={id} className="color-input-label">
-                Pick Color...
+                {text}
                 <input
                     name={name}
                     id={id}
