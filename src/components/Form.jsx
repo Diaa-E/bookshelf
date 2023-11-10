@@ -3,12 +3,14 @@ import "../styles/Form.css";
 import FormButton from "./FormButton";
 import FormInput from "./FormInput";
 import FormNumberInput from "./FormNumberInput";
+import FormCheckbox from "./FormCheckbox";
 
 export default function Form({submitHandler})
 {
     const [bookTitle, setBookTitle] = useState("");
     const [bookAuthor, setBookAuthor] = useState("");
     const [pages, setPages] = useState("");
+    const [isRead, setIsRead] = useState(false);
 
     function handleTitleChange(e)
     {
@@ -25,6 +27,12 @@ export default function Form({submitHandler})
         setPages(e.target.value);
     }
 
+    function handleReadChange(e)
+    {
+        setIsRead(e.target.checked)
+        console.log(e.target.checked)
+    }
+
     function resetForm()
     {
         setBookAuthor("");
@@ -35,7 +43,7 @@ export default function Form({submitHandler})
     return (
         <>
             <form action="" onSubmit={(e) => {
-                    submitHandler(e, bookTitle, bookAuthor, pages);
+                    submitHandler(e, bookTitle, bookAuthor, pages, isRead);
                     resetForm();
                 }}>
                 <fieldset  className="add-book-form">
@@ -69,6 +77,13 @@ export default function Form({submitHandler})
                         type="number"
                         min={0}
                         max={9999}
+                    />
+                    <FormCheckbox
+                        id="isRead"
+                        required={false}
+                        text="Already read"
+                        checked={isRead}
+                        changeHandler={handleReadChange}
                     />
                     <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
                     <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>

@@ -15,7 +15,7 @@ function App() {
   const [books, setBooks] = useState([]);
   const [count, setCount] = useState(0);
 
-  function addBook(e, bookTitle, bookAuthor, pages)
+  function addBook(e, bookTitle, bookAuthor, pages, isRead)
   {
     e.preventDefault();
 
@@ -24,6 +24,7 @@ function App() {
       title: bookTitle,
       author: bookAuthor,
       pages: pages,
+      isRead: isRead,
       style:{
         height: `${generateRandomNumber(200, 150)}px`,
         width: `${generateRandomNumber(25, 40)}px`,
@@ -54,6 +55,7 @@ function App() {
           style={book.style}
           deleteHandler={deleteBook}
           pages={book.pages}
+          isRead={book.isRead}
         />
       ))}/>
     </>

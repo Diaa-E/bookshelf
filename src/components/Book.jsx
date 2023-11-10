@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/Book.css";
 
-export default function Book({title, author, style, id, deleteHandler, pages})
+export default function Book({title, author, style, id, deleteHandler, pages, isRead})
 {
     pages === "" || +pages === 0? pages = "N/A" : pages;
 
@@ -11,6 +11,7 @@ export default function Book({title, author, style, id, deleteHandler, pages})
                 <p>Title: {title}</p>
                 <p>Author: {author}</p>
                 <p>Number of pages: {pages}</p>
+                <p>Read: {isRead ? "Yes" : "Not yet"}</p>
                 <p>ID: {id}</p>
             </div>
             <button onClick={() => deleteHandler(id)} className="delete-button"></button>
