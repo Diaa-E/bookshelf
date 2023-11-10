@@ -28,7 +28,7 @@ function App() {
       style:{
         height: `${generateRandomNumber(200, 150)}px`,
         width: `${generateRandomNumber(25, 40)}px`,
-        backgroundColor: `hsl(${generateRandomNumber(0, 359)}, ${generateRandomNumber(0, 100)}%, ${generateRandomNumber(0, 50)}%)`,
+        backgroundColor: `hsl(${generateRandomNumber(0, 359)}, ${generateRandomNumber(0, 100)}%, ${generateRandomNumber(0, 100)}%)`,
         transform: `rotate(${generateRandomNumber(-20, 0)}deg)`,
       }
     }]);
