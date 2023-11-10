@@ -74,7 +74,6 @@ export default function Form({submitHandler})
                         name="pages"
                         changeHandler={handlePagesChange}
                         value={pages}
-                        type="number"
                         min={0}
                         max={9999}
                     />
