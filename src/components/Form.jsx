@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/Form.css";
 import FormButton from "./FormButton";
 import FormInput from "./FormInput";
+import FormNumberInput from "./FormNumberInput";
 
 export default function Form({submitHandler})
 {
@@ -57,7 +58,7 @@ export default function Form({submitHandler})
                         changeHandler={handleAuthorChange}
                         value={bookAuthor}
                     />
-                    <FormInput
+                    <FormNumberInput
                         id="pages"
                         required={false}
                         text="Number of Pages"
@@ -66,6 +67,8 @@ export default function Form({submitHandler})
                         changeHandler={handlePagesChange}
                         value={pages}
                         type="number"
+                        min={0}
+                        max={9999}
                     />
                     <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
                     <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>

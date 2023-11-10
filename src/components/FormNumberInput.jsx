@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/FormInput.css";
 
-export default function FormInput({id, text="label", placeHolder="Write text here", required = false, name, value, changeHandler})
+export default function FormNumberInput({id, text="label", placeHolder="0", required = false, name, value, changeHandler, max, min})
 {
     return (
         <>
@@ -11,12 +11,13 @@ export default function FormInput({id, text="label", placeHolder="Write text her
                 required={required}
                 placeholder={placeHolder}
                 id={id}
-                type="text"
+                type="number"
                 className="form-input"
                 value={value}
                 onChange={changeHandler}
+                max={max}
+                min={min}
             >
-
             </input>
         </>
     )
