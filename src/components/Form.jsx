@@ -30,7 +30,6 @@ export default function Form({submitHandler})
     function handleReadChange(e)
     {
         setIsRead(e.target.checked)
-        console.log(e.target.checked)
     }
 
     function resetForm()
