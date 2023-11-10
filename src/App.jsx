@@ -43,6 +43,23 @@ function App() {
     setBooks(updatedBooks);
   }
 
+  function toggleBookRead(bookId)
+  {
+    const updatedBooks = [...books];
+    const targetBook = updatedBooks.find(book => book.id === bookId);
+    
+    //spread operator doesn't overwrite same key value like with objects
+    Object.assign(
+      targetBook,
+      {
+        ...targetBook,
+        isRead: !targetBook.isRead,
+      }
+    )
+
+    setBooks(updatedBooks);
+  }
+
   return (
     <>
       <Form submitHandler={addBook}/>
@@ -56,6 +73,7 @@ function App() {
           deleteHandler={deleteBook}
           pages={book.pages}
           isRead={book.isRead}
+          clickHandler={toggleBookRead}
         />
       ))}/>
     </>
