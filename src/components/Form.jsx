@@ -4,6 +4,7 @@ import FormButton from "./FormButton";
 import FormInput from "./FormInput";
 import FormNumberInput from "./FormNumberInput";
 import FormCheckbox from "./FormCheckbox";
+import FormColorInput from "./FormColorInput";
 
 export default function Form({submitHandler})
 {
@@ -11,6 +12,8 @@ export default function Form({submitHandler})
     const [bookAuthor, setBookAuthor] = useState("");
     const [pages, setPages] = useState("");
     const [isRead, setIsRead] = useState(false);
+    const [colorInputDisabled, setColorInputDisabled] = useState(false);
+    const [color, setColor] = useState("#ff0000");
 
     function handleTitleChange(e)
     {
@@ -30,6 +33,11 @@ export default function Form({submitHandler})
     function handleReadChange(e)
     {
         setIsRead(e.target.checked)
+    }
+
+    function handleColorChange(e)
+    {
+        setColor(e.target.value);
     }
 
     function resetForm()
@@ -81,8 +89,16 @@ export default function Form({submitHandler})
                         id="isRead"
                         required={false}
                         text="Already read"
+                        name="isRead"
                         checked={isRead}
                         changeHandler={handleReadChange}
+                    />
+                    <FormColorInput
+                        id="bookColor"
+                        name="bookColor"
+                        disabled={colorInputDisabled}
+                        changeHandler={handleColorChange}
+                        value={color}
                     />
                     <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
                     <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>
