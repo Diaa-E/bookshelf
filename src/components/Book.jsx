@@ -6,7 +6,7 @@ export default function Book({title, author, style, id, deleteHandler, pages, is
     pages === "" || +pages === 0? pages = "N/A" : pages;
 
     return (
-        <div onClick={() => clickHandler(id)} style={style} className="book">
+        <div onClick={(e) => clickHandler(e, id)} style={style} className="book">
             <div className="book-info">
                 <p>Title: {title}</p>
                 <p>Author: {author}</p>
@@ -14,7 +14,7 @@ export default function Book({title, author, style, id, deleteHandler, pages, is
                 <p>Read: {isRead ? "Yes" : "Not yet"}</p>
                 <p>ID: {id}</p>
             </div>
-            <button onClick={() => deleteHandler(id)} className="delete-button"></button>
+            <button onClick={(e) => deleteHandler(e, id)} className="delete-button"></button>
         </div>
     )
 }

@@ -36,15 +36,17 @@ function App() {
     setCount(count + 1);
   }
 
-  function deleteBook(bookId)
+  function deleteBook(e, bookId)
   {
+    e.stopPropagation();
     const updatedBooks = books.filter(book => book.id !== bookId)
 
     setBooks(updatedBooks);
   }
 
-  function toggleBookRead(bookId)
+  function toggleBookRead(e, bookId)
   {
+    e.stopPropagation();
     const updatedBooks = [...books];
     const targetBook = updatedBooks.find(book => book.id === bookId);
     
