@@ -1,3 +1,9 @@
 .form-checkbox{
     cursor: pointer;
+    place-self: center;
+}
+
+.form-checkbox:focus{
+    border-color: var(--blue);
+    box-shadow: 0px 0px 12px var(--blue);
 }
