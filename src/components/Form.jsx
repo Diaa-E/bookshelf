@@ -5,6 +5,7 @@ import FormInput from "./FormInput";
 import FormNumberInput from "./FormNumberInput";
 import FormCheckbox from "./FormCheckbox";
 import FormColorInput from "./FormColorInput";
+import FormRadioInput from "./FormRadioInput";
 
 export default function Form({submitHandler})
 {
@@ -12,7 +13,7 @@ export default function Form({submitHandler})
     const [bookAuthor, setBookAuthor] = useState("");
     const [pages, setPages] = useState("");
     const [isRead, setIsRead] = useState(false);
-    const [colorInputDisabled, setColorInputDisabled] = useState(false);
+    const [colorMode, setColorMode] = useState(0);
     const [color, setColor] = useState("#ff0000");
 
     function handleTitleChange(e)
@@ -93,13 +94,28 @@ export default function Form({submitHandler})
                         checked={isRead}
                         changeHandler={handleReadChange}
                     />
+                    <FormRadioInput
+                        useLabel={false}
+                        id="enableColorInput"
+                        name="enableColorInput"
+                        checked = {colorMode === 0? true : false}
+                        changeHandler={(e) => setColorMode(e.target.checked ? 0 : 1)}
+                    />
                     <FormColorInput
                         id="bookColor"
                         name="bookColor"
-                        disabled={colorInputDisabled}
+                        disabled={colorMode === 1? true : false}
                         changeHandler={handleColorChange}
                         value={color}
                         text="Pick a book color..."
+                    />
+                    <FormRadioInput
+                        useLabel={true}
+                        text="Generate a random color"
+                        id="disableColorInput"
+                        name="disableColorInput"
+                        checked = {colorMode === 1? true : false}
+                        changeHandler={(e) => setColorMode(e.target.checked ? 1 : 0)}
                     />
                     <FormButton className={"form-button green-button"} text="Add Book" type="submit"/>
                     <FormButton clickHandler={resetForm} className={"form-button red-button"} text="Clear Fields"/>
