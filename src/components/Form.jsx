@@ -37,6 +37,7 @@ export default function Form({submitHandler})
         setBookAuthor("");
         setBookTitle("");
         setPages("");
+        setIsRead(false);
     }
 
     return (
