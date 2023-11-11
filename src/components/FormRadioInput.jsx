@@ -3,7 +3,7 @@ import "../styles/FormRadioInput.css";
 
 export default function FormRadioInput({id, text="label", checked, name, changeHandler, useLabel = true})
 {
-    const label = useLabel? <label htmlFor={id} className="">{text}</label> : null;
+    const label = useLabel? <label htmlFor={id} className="form-radio-label">{text}</label> : null;
     return (
         <>
             <input
@@ -12,7 +12,7 @@ export default function FormRadioInput({id, text="label", checked, name, changeH
                 type="radio"
                 checked={checked}
                 onChange={changeHandler}
-                className="form-checkbox"
+                className="form-radio-input"
             >
             </input>
             {label}

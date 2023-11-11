@@ -1,0 +1,10 @@
+.form-radio-label{
+    text-align: left;
+    padding: 10px;
+}
+
+.form-radio-input{
+    cursor: pointer;
+    place-self: center;
+    transform: scale(2);
+}
