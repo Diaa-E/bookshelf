@@ -18,9 +18,11 @@ export default function FormColorInput({id, name, changeHandler, disabled = fals
         color: luma > 100 ? "black" : "white",
     }
 
+    const labelClassName = `color-input-label ${disabled? "disabled" : ""}`;
+
     return (
         <>
-            <label style={labelStyle} htmlFor={id} className="color-input-label">
+            <label disabled={disabled} style={labelStyle} htmlFor={id} className={labelClassName}>
                 {text}
                 <input
                     name={name}

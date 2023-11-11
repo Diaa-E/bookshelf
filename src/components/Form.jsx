@@ -106,7 +106,7 @@ export default function Form({submitHandler})
                         name="bookColor"
                         disabled={colorMode === 1? true : false}
                         changeHandler={handleColorChange}
-                        value={color}
+                        value={colorMode === 0 ? color : "grey"}
                         text="Pick a book color..."
                     />
                     <FormRadioInput
