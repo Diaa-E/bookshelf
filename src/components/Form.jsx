@@ -89,7 +89,7 @@ export default function Form({submitHandler})
                     <FormCheckbox
                         id="isRead"
                         required={false}
-                        text="Already read"
+                        text="Mark book as read"
                         name="isRead"
                         checked={isRead}
                         changeHandler={handleReadChange}

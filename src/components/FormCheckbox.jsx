@@ -5,7 +5,6 @@ export default function FormCheckbox({id, text="label", required = false, checke
 {
     return (
         <>
-            <label className="form-label" htmlFor={id}>{text}</label>
             <input
                 name={name}
                 required={required}
@@ -15,8 +14,8 @@ export default function FormCheckbox({id, text="label", required = false, checke
                 onChange={changeHandler}
                 className="form-checkbox"
             >
-
             </input>
+            <label className="form-checkbox-label" htmlFor={id}>{text}</label>
         </>
     )
 }
