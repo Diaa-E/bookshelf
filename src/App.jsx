@@ -8,14 +8,14 @@ import './styles/App.css';
 import Form from './components/Form'
 import Shelf from './components/Shelf';
 import Book from './components/Book';
-import { generateRandomNumber } from './utility';
+import { generateRandomNumber, generateRandomColorHSL } from './utility';
 
 function App() {
 
   const [books, setBooks] = useState([]);
   const [count, setCount] = useState(0);
 
-  function addBook(e, bookTitle, bookAuthor, pages, isRead)
+  function addBook(e, bookTitle, bookAuthor, pages, isRead, colorMode, color)
   {
     e.preventDefault();
 
@@ -28,7 +28,7 @@ function App() {
       style:{
         height: `${generateRandomNumber(200, 150)}px`,
         width: `${generateRandomNumber(25, 40)}px`,
-        backgroundColor: `hsl(${generateRandomNumber(0, 359)}, ${generateRandomNumber(0, 100)}%, ${generateRandomNumber(0, 100)}%)`,
+        backgroundColor: colorMode === 0 ? color : generateRandomColorHSL({upper: 0, lower: 259}, {upper: 100, lower: 0}, {upper: 100, lower: 0}),
         transform: `rotate(${generateRandomNumber(-20, 0)}deg)`,
       }
     }]);

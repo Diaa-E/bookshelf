@@ -52,7 +52,7 @@ export default function Form({submitHandler})
     return (
         <>
             <form action="" onSubmit={(e) => {
-                    submitHandler(e, bookTitle, bookAuthor, pages, isRead);
+                    submitHandler(e, bookTitle, bookAuthor, pages, isRead, colorMode, color);
                     resetForm();
                 }}>
                 <fieldset  className="add-book-form">
